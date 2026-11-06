@@ -7,7 +7,7 @@ async def test_aesa_wrapper(dut):
     """Test loading a phase and triggering SPI transmission."""
     
     # Start the clock
-    clock = Clock(dut.clk, 10, unit="ns")
+    clock = Clock(dut.clk, 20, unit="ns")
     cocotb.start_soon(clock.start())
 
     # Initialize
@@ -20,7 +20,7 @@ async def test_aesa_wrapper(dut):
     await RisingEdge(dut.clk)
 
     # 1. Load phase 0x0B (11) into Antenna 2
-    dut.ui_in.value = 0b00001010 # ant_idx = 2, load = 1
+    dut.ui_in.value = 0b00001001 # ant_idx = 2, load = 1
     dut.uio_in.value = 0b00001011 # phase = 11
     await RisingEdge(dut.clk)
     dut.ui_in.value = 0b00000000 # turn off load

@@ -1,4 +1,4 @@
-SIM ?= verilator
+SIM ?= icarus
 TOPLEVEL_LANG ?= verilog
 
 VERILOG_SOURCES += $(PWD)/../src/spi_master.v
