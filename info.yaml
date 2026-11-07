@@ -6,7 +6,7 @@ project:
   description: "ADAR1000-format SPI frame engine: single frames, readback, 16-frame bursts and load pulses for 4 beamformer chips."
   language: "Verilog"
   clock_hz: 50000000
-  tiles: "1x2"
+  tiles: "1x1"
   top_module: "tt_um_aesa_brain"
   source_files:
     - "spi_master.v"
