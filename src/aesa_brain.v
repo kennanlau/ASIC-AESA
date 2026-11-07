@@ -62,6 +62,7 @@ module aesa_brain (
     wire [12:0] addr        = hdr[12:0] + {8'd0, off};
     wire [23:0] burst_frame = {1'b0, k[3:2], addr, bank[k]};
     wire [23:0] spi_tx      = burst ? burst_frame : {hdr, data_byte};
+    wire        _unused     = &{spi_busy, cfg[7], 1'b0};   // cfg[7] reserved
 
     spi_master spi (
         .clk(clk), .rst(rst), .start(spi_start), .cpha(cpha), .half_div(half_div),
