@@ -39,5 +39,5 @@ module tt_um_aesa_brain (
     assign uo_out  = {1'b0, tx_load, rx_load, busy, done_sticky, cs_n, mosi, sclk};
     assign uio_out = rx_byte;
     assign uio_oe  = {8{rd_oe}};
-    wire _unused = &{ena, s3[7:6], s3[4:2], 1'b0};
+    wire _unused = &{ena, 1'b0};
 endmodule
